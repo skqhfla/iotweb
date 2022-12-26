@@ -1,3 +1,5 @@
+import dbconfig from './db.config';
+
 const morgan = require('morgan');
 const models = require('./models');
 
@@ -6,6 +8,7 @@ const app = express();
 
 /* 포트 설정 */
 app.set('port', process.env.PORT || 8080);
+dbconfig();
 
 /* 공통 미들웨어 */
 app.use(morgan('dev'));
